@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CISO Executive Dashboard</title>
+  <meta name="description" content="Open-source, single-page security dashboard for executive and board reporting. Fictional sample data — edit data/metrics.js to reuse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Security programme · executive view</p>
+        <h1>CISO Executive Dashboard</h1>
+        <p class="meta"><span id="org">—</span> · <span id="period">—</span></p>
+      </div>
+      <div class="controls">
+        <button class="btn" id="themeToggle" type="button" aria-label="Toggle light or dark theme">Theme</button>
+        <button class="btn" id="printBtn" type="button">Print / PDF</button>
+      </div>
+    </header>
+
+    <section class="kpis" id="kpis" aria-label="Key performance indicators"></section>
+
+    <div class="grid">
+      <section class="card span-6" aria-labelledby="h-csf">
+        <h2 id="h-csf">NIST CSF 2.0 maturity</h2>
+        <p class="sub">Self-assessed maturity per function (0 = not performed, 4 = optimised)</p>
+        <div class="chart-box tall"><canvas id="csfChart" role="img" aria-label="Radar chart of NIST CSF 2.0 maturity by function"></canvas></div>
+      </section>
+
+      <section class="card span-6" aria-labelledby="h-risk">
+        <h2 id="h-risk">Risk register trend</h2>
+        <p class="sub">Open risks by severity at quarter end</p>
+        <div class="chart-box tall"><canvas id="riskChart" role="img" aria-label="Stacked bar chart of open risks by severity per quarter"></canvas></div>
+      </section>
+
+      <section class="card span-8" aria-labelledby="h-inc">
+        <h2 id="h-inc">Security incidents — last 12 months</h2>
+        <p class="sub">Confirmed incidents per month and the P1/P2 subset</p>
+        <div class="chart-box"><canvas id="incidentChart" role="img" aria-label="Line chart of monthly incidents"></canvas></div>
+      </section>
+
+      <section class="card span-4" aria-labelledby="h-cat">
+        <h2 id="h-cat">Incidents by category</h2>
+        <p class="sub">Share of the last 12 months</p>
+        <div class="chart-box"><canvas id="categoryChart" role="img" aria-label="Doughnut chart of incidents by category"></canvas></div>
+      </section>
+
+      <section class="card span-4" aria-labelledby="h-vuln">
+        <h2 id="h-vuln">Vulnerability SLA</h2>
+        <p class="sub">Open findings by remediation status</p>
+        <div class="chart-box" style="position:relative">
+          <canvas id="vulnChart" role="img" aria-label="Doughnut chart of findings within and outside SLA"></canvas>
+          <div id="vulnCenter" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;padding-bottom:40px;font-family:var(--font-num)"><strong style="font-size:1.6rem">—</strong><span style="font-size:.75rem;color:var(--muted)">open findings</span></div>
+        </div>
+        <ul id="vulnFacts" class="legend-note" style="padding-left:18px;margin-top:8px"></ul>
+      </section>
+
+      <section class="card span-8" aria-labelledby="h-comp">
+        <h2 id="h-comp">Compliance programmes</h2>
+        <p class="sub">Controls implemented and evidenced, per framework (hover for status)</p>
+        <div class="chart-box"><canvas id="complianceChart" role="img" aria-label="Horizontal bar chart of compliance progress by framework"></canvas></div>
+      </section>
+
+      <section class="card span-12" aria-labelledby="h-top">
+        <h2 id="h-top">Top risks for the executive committee</h2>
+        <p class="sub">Likelihood × Impact score (5×5), treatment decision and due date</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>Risk</th><th>Owner</th><th>Score</th><th>Trend</th><th>Treatment</th><th>Due</th></tr></thead>
+            <tbody id="riskRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card span-8" aria-labelledby="h-init">
+        <h2 id="h-init">Programme roadmap</h2>
+        <p class="sub">Strategic initiatives and delivery status</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Initiative</th><th>Owner</th><th>Status</th><th>Progress</th><th></th><th>Target</th></tr></thead>
+            <tbody id="initRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card span-4" aria-labelledby="h-budget">
+        <h2 id="h-budget">Budget</h2>
+        <p class="sub" id="budgetNote">—</p>
+        <div class="chart-box"><canvas id="budgetChart" role="img" aria-label="Bar chart of planned versus spent budget by category"></canvas></div>
+      </section>
+    </div>
+
+    <footer>
+      <p><strong>All figures are fictional</strong> and describe an imaginary organisation. Edit <code>data/metrics.js</code> to use your own.</p>
+      <p>Open source under the MIT License · <a href="https://github.com/bizidwassim-design/ciso-executive-dashboard">github.com/bizidwassim-design/ciso-executive-dashboard</a></p>
+    </footer>
+  </div>
+
+  <script src="data/metrics.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
