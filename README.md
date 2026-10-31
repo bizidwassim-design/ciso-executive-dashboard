@@ -1,6 +1,6 @@
 # CISO Executive Dashboard
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![CI](https://github.com/bizidwassim-design/ciso-executive-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/bizidwassim-design/ciso-executive-dashboard/actions/workflows/ci.yml) [![No macros](https://img.shields.io/badge/office%20files-no%20macros-success)](SECURITY.md) [![Fictional data](https://img.shields.io/badge/sample%20data-fictional-informational)](SECURITY.md)
 
 A free, open-source **single-page security dashboard for executive and board reporting**: eight headline KPIs,
 NIST CSF 2.0 maturity radar, risk-register trend, incident trend and categories, vulnerability SLA, compliance
@@ -12,6 +12,8 @@ Works from a local folder, GitHub Pages or any static host. Prints cleanly to PD
 > 🇫🇷 Résumé en français en bas de page.
 
 **All figures in the sample are fictional** ("Northwind Logistics"). No real company data is included.
+
+![Dashboard screenshot](docs/screenshot.png)
 
 ## Live demo
 
@@ -50,8 +52,11 @@ Low 1–4, Medium 5–9, High 10–16, Critical 17–25.
 * Light and dark themes (follows the OS, with a manual toggle remembered per browser).
 * Responsive from phone to boardroom screen; `Print / PDF` button with print styles.
 * Accessible: semantic sections, labelled charts, keyboard-visible focus.
-* Only dependency is [Chart.js 4](https://www.chartjs.org/) loaded from cdnjs; fonts from Google Fonts.
-  To run fully offline, download `chart.umd.min.js` into `assets/` and change the `<script>` tag.
+* **Security by default**: Content-Security-Policy meta, the only third-party script ([Chart.js 4](https://www.chartjs.org/)) is
+  version-pinned with a Subresource Integrity hash, system fonts only (no font-provider requests), `referrer: no-referrer`,
+  no analytics, no network calls — the page works offline once `chart.umd.min.js` is cached. All rendered text is escaped,
+  so a malicious value in the data file cannot inject script.
+  To run fully air-gapped, download `chart.umd.min.js` into `assets/`, point the `<script>` tag at it and drop `https://cdnjs.cloudflare.com` from the CSP.
 
 ## Why these metrics
 

@@ -19,8 +19,9 @@
   --chart-text: #5b6878;
   --radius: 10px;
   --shadow: 0 1px 2px rgba(21, 32, 43, 0.06), 0 4px 16px rgba(21, 32, 43, 0.05);
-  --font-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-num: "JetBrains Mono", "Consolas", ui-monospace, monospace;
+  /* System fonts only: no third-party font requests (privacy, offline use, CSP without external font-src). */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-num: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -167,6 +168,7 @@ tr:last-child td { border-bottom: 0; }
 .trend.flat { color: var(--muted); }
 
 .legend-note { font-size: 0.78rem; color: var(--muted); margin: 10px 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; }
 footer p { margin: 4px 0; }

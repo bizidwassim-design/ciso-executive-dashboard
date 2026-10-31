@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CISO Executive Dashboard</title>
   <meta name="description" content="Open-source, single-page security dashboard for executive and board reporting. Fictional sample data — edit data/metrics.js to reuse.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
   <link rel="stylesheet" href="assets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha384-bs/nf9FbdNouRbMiFcrcZfLXYPKiPaGVGplVbv7dLGECccEXDW+S3zjqSKR5ZEaD" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="wrap">
@@ -72,7 +73,7 @@
         <p class="sub">Likelihood × Impact score (5×5), treatment decision and due date</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>ID</th><th>Risk</th><th>Owner</th><th>Score</th><th>Trend</th><th>Treatment</th><th>Due</th></tr></thead>
+            <thead><tr><th scope="col">ID</th><th scope="col">Risk</th><th scope="col">Owner</th><th scope="col">Score</th><th scope="col">Trend</th><th scope="col">Treatment</th><th scope="col">Due</th></tr></thead>
             <tbody id="riskRows"></tbody>
           </table>
         </div>
@@ -83,7 +84,7 @@
         <p class="sub">Strategic initiatives and delivery status</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Initiative</th><th>Owner</th><th>Status</th><th>Progress</th><th></th><th>Target</th></tr></thead>
+            <thead><tr><th scope="col">Initiative</th><th scope="col">Owner</th><th scope="col">Status</th><th scope="col">Progress</th><th scope="col"></th><th scope="col">Target</th></tr></thead>
             <tbody id="initRows"></tbody>
           </table>
         </div>
@@ -98,7 +99,7 @@
 
     <footer>
       <p><strong>All figures are fictional</strong> and describe an imaginary organisation. Edit <code>data/metrics.js</code> to use your own.</p>
-      <p>Open source under the MIT License · <a href="https://github.com/bizidwassim-design/ciso-executive-dashboard">github.com/bizidwassim-design/ciso-executive-dashboard</a></p>
+      <p>Open source under the MIT License · <a href="https://github.com/bizidwassim-design/ciso-executive-dashboard" rel="noopener noreferrer">github.com/bizidwassim-design/ciso-executive-dashboard</a> · No tracking, no data leaves this page.</p>
     </footer>
   </div>
 
