@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![CI](https://github.com/bizidwassim-design/ciso-executive-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/bizidwassim-design/ciso-executive-dashboard/actions/workflows/ci.yml) [![No macros](https://img.shields.io/badge/office%20files-no%20macros-success)](SECURITY.md) [![Fictional data](https://img.shields.io/badge/sample%20data-fictional-informational)](SECURITY.md)
 
+[![Demo](https://img.shields.io/badge/demo-open%20the%20live%20app-2F80ED?style=for-the-badge&logo=githubpages&logoColor=white)](https://bizidwassim-design.github.io/ciso-executive-dashboard/)
+
 A free, open-source **single-page security dashboard for executive and board reporting**: eight headline KPIs,
 NIST CSF 2.0 maturity radar, risk-register trend, incident trend and categories, vulnerability SLA, compliance
 programme progress (ISO 27001, ISO 42001, SOC 2, CIS v8, NIST CSF), top risks, roadmap and budget.
