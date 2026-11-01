@@ -71,6 +71,13 @@ would be (target), and where do we need a decision (risks, roadmap status, budge
 Ideas for new tiles, better chart defaults, translations and accessibility fixes are welcome — see
 [CONTRIBUTING.md](CONTRIBUTING.md). Please keep sample data fictional.
 
+## AI assistance
+
+Built with Claude Code as a coding and writing assistant, which is why it appears as a co-author on some commits.
+**Editor and reviewer: Wassim Bizid**, who set the scope, the frameworks and the GRC approach, edited the content
+and decided what was published. Automated tests in CI check the published outputs. This is a maintainer review,
+not an independent one.
+
 ## License
 
 [MIT](LICENSE).
